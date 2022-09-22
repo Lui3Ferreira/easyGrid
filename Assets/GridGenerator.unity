@@ -2286,7 +2286,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975330851}
         m_TargetAssemblyTypeName: GridViewModel, Assembly-CSharp
-        m_MethodName: UpdateRowLenght
+        m_MethodName: UpdateRowLength
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3038,7 +3038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA Z"
+  m_Text: "Cell Rot\xBA Z"
 --- !u!222 &575397288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3284,7 +3284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA X"
+  m_Text: "Cell Rot\xBA X"
 --- !u!222 &628422631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5723,7 +5723,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975330851}
         m_TargetAssemblyTypeName: GridViewModel, Assembly-CSharp
-        m_MethodName: UpdateColumnLenght
+        m_MethodName: UpdateColumnLength
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6005,7 +6005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1661525960}
-  _isOn: 0
   _imageShow: {fileID: 21300000, guid: 4f084c23b827592468f713c37444b785, type: 3}
   _imageHide: {fileID: 21300000, guid: 6297cddc70a54b94aa8c281a935318dd, type: 3}
   _hideShowBtn: {fileID: 1224282858}
@@ -8638,7 +8637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA Y"
+  m_Text: "Cell Rot\xBA Y"
 --- !u!222 &1772145342
 CanvasRenderer:
   m_ObjectHideFlags: 0

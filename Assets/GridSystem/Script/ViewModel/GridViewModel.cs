@@ -38,7 +38,9 @@ public class GridViewModel : MonoBehaviour
     /// <summary>
     /// The folowing fields will update our model with information from the user
     /// </summary>
-    public void UpdateColumnLenght()
+
+    //Update model for grid column Length 
+    public void UpdateColumnLength()
     {
         if (ColField.text.Contains("-"))
         {
@@ -54,8 +56,8 @@ public class GridViewModel : MonoBehaviour
             Config.ColumnLenght = Math.Abs(ConvertTextToNum<int>(ColField));
     }
 
-   
-    public void UpdateRowLenght()
+    //Update model for grid row length 
+    public void UpdateRowLength()
     {
         if (RowField.text.Contains("-"))
         {
@@ -71,31 +73,37 @@ public class GridViewModel : MonoBehaviour
             Config.RowLenght = Math.Abs(ConvertTextToNum<int>(RowField));
     }
 
+    //Update model for XSPACE 
     public void UpdateXSpace()
     {
         Config.XSpace = ConvertTextToNum<float>(XSpaceField);
     }
 
+    //Update model for YSPACE 
     public void UpdateYSpace()
     {
         Config.YSpace = ConvertTextToNum<float>(YSpaceField);
     }
 
+    //Update model for XStart 
     public void UpdateXStart()
     {
         Config.XStart = ConvertTextToNum<float>(XStartField); 
     }
 
+    //Update model for YStart 
     public void UpdateYStart()
     {
         Config.YStart = ConvertTextToNum<float>(YStartField);
     }
 
+    //Update model for ZStart 
     public void UpdateZStart()
     {
         Config.ZStart = ConvertTextToNum<float>(ZStartField);
     }
 
+    //Update model for scale 
     public void UpdateScale()
     {
         if (ScaleField.text.Contains(","))
@@ -108,46 +116,55 @@ public class GridViewModel : MonoBehaviour
             Config.Scale = ConvertTextToNum<float>(ScaleField);
     }
 
+    //Update model for cell rotation in X
     public void UpdateRotX()
     {
         Config.RotX = ConvertTextToNum<float>(ObjRotXField);
     }
 
+    //Update model for cell rotation in Y
     public void UpdateRotY()
     {
         Config.RotY = ConvertTextToNum<float>(ObjRotYField);
     }
 
+    //Update model for cell rotation in Z 
     public void UpdateRotZ()
     {
         Config.RotZ = ConvertTextToNum<float>(ObjRotZField); 
     }
 
+    //Update model for Empty Game object position in X
     public void UpdateEmptyGoPosX()
     {
         Config.EmptyPosX = ConvertTextToNum<float>(GridPosXField); 
     }
 
+    //Update model for Empty Game object position in Y
     public void UpdateEmptyGoPosY()
     {
         Config.EmptyPosy = ConvertTextToNum<float>(GridPosYField); 
     }
 
+    //Update model for Empty Game object position in Z
     public void UpdateEmptyGoPosZ()
     {
         Config.EmptyPosZ = ConvertTextToNum<float>(GridPosZField);
     }
 
+    //Update model for Empty Game object rotation in X
     public void UpdateEmptyGoRotX()
     {
         Config.EmptyRotX = ConvertTextToNum<float>(GridRotXField); 
     }
 
+    //Update model for Empty Game object rotation in Y
     public void UpdateEmptyGoRotY()
     {
         Config.EmptyRoty = ConvertTextToNum<float>(GridRotYField); 
     }
 
+    //Update model for Empty Game object rotation in Z
     public void UpdateEmptyGoRotZ()
     {
         Config.EmptyRotZ = ConvertTextToNum<float>(GridRotZField);
@@ -177,10 +194,14 @@ public class GridViewModel : MonoBehaviour
         GridRotZField.text = GameContainer.transform.rotation.z.ToString();
     }
 
+    /*
+     Generic function that will convert inputfield value based on T.
+     The function will also evaluate if user input is correct.
+    */
     private T ConvertTextToNum<T>(InputField inputfield)
     {
         T convert = default;
- 
+   
         try
         {
             inputfield.image.color = Color.white;
@@ -189,10 +210,7 @@ public class GridViewModel : MonoBehaviour
                 btn.interactable = true;
             
             convert = (T)Convert.ChangeType(inputfield.text, typeof(T));
-                
-            //COMPARE T
-            //bool isNegative = Comparer<T>.Default.Compare(convert, default) < 0;
-            //Debug.Log("CONVERT " + isNegative);
+
         }
         catch (Exception e)
         {      

@@ -44,6 +44,7 @@ public class GridManager : MonoBehaviour
         GVM.FillDefaultUiParameters((GridGenerator)gridGenerator, GameContainer);
     }
 
+    //Function that will display the InfoPanel prefab
     private void InstantiateInfoPanel()
     {
         GameObject info = Instantiate(_infoPanel, new Vector3(0, 0, 0), Quaternion.identity);
@@ -80,13 +81,14 @@ public class GridManager : MonoBehaviour
             GameContainer.transform.localEulerAngles = new Vector3(GVM.Config.EmptyRotX, GVM.Config.EmptyRoty, GVM.Config.EmptyRotZ);
     }
 
-    //Funcyion that saves the parameters to the JSON file. Its called in the "Save Params." button
+    //Function that saves the parameters to the JSON file. Its called in the "Save Params." button
     public void SaveParametersToModel()
     {
         SaveLoadGridConfig.Instance.SaveSettings(GVM.Config);
         SaveFeedback();
     }
 
+    //Function that will start the coroutine to show the save icon
     private void SaveFeedback()
     {
         StartCoroutine(HideShowGO.ShowAndHide(_saveIcon, 1.0f));
