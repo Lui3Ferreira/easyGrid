@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f973b3d22ae0f449bb4b436ba449d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyGameItems:
+  _myGameItems:
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
@@ -960,11 +960,10 @@ MonoBehaviour:
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
   - {fileID: 9166931010412654816, guid: 8a44e8ed986d03d4bbf7238d00afc8d4, type: 3}
-  GameContainer: {fileID: 1975330849}
-  GVM: {fileID: 1975330851}
-  Camera: {fileID: 102213898}
+  _gvm: {fileID: 1975330851}
   _infoPanel: {fileID: 3966211840355482253, guid: 6aa9183e6ad94744a98f1696f37373d3, type: 3}
   _saveIcon: {fileID: 41519539}
+  _gameContainer: {fileID: 1975330849}
 --- !u!114 &102213901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,7 +3037,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cell Rot\xBA Z"
+  m_Text: "Obj Rot\xBA Z"
 --- !u!222 &575397288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3284,7 +3283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cell Rot\xBA X"
+  m_Text: "Obj Rot\xBA X"
 --- !u!222 &628422631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8637,7 +8636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cell Rot\xBA Y"
+  m_Text: "Obj Rot\xBA Y"
 --- !u!222 &1772145342
 CanvasRenderer:
   m_ObjectHideFlags: 0

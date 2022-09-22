@@ -6,24 +6,20 @@ using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {   //List of dummy GO
-    public List<GameObject> MyGameItems = new List<GameObject>();
-    public GameObject GameContainer;
-    public GridViewModel GVM;
+    [SerializeField]
+    private List<GameObject> _myGameItems = new List<GameObject>();
+    [SerializeField]
+    private GridViewModel _gvm;
     private IGenerator gridGenerator;
-    public Camera Camera;
-
     [SerializeField]
-    private GameObject _infoPanel;
-
-    [SerializeField]
-    private GameObject _saveIcon;
+    private GameObject _infoPanel, _saveIcon, _gameContainer;
 
     void Start()
     {
         InstantiateInfoPanel();
 
         //Inicicializes the new intance of the Model 
-        GVM.Init();
+        _gvm.Init();
 
         //Creates a default grid
         gridGenerator = new GridGenerator(
@@ -36,12 +32,12 @@ public class GridManager : MonoBehaviour
             0, //z_start    
             1, //scale
             new Vector3(0f, 0f, 0f), //empty_GO_rotation)
-            GameContainer);
+            _gameContainer);
 
         //Adds list of items to our grid
-        gridGenerator.AddItemsToGrid(MyGameItems);
+        gridGenerator.AddItemsToGrid(_myGameItems);
         //Fill default parameters to our View
-        GVM.FillDefaultUiParameters((GridGenerator)gridGenerator, GameContainer);
+        _gvm.FillDefaultUiParameters((GridGenerator)gridGenerator, _gameContainer);
     }
 
     //Function that will display the InfoPanel prefab
@@ -54,37 +50,37 @@ public class GridManager : MonoBehaviour
     //Generates grids based on our Model. Its called in the "Create Grid Button"
     public void GenerateNewGrid()
     {
-        foreach (Transform child in GameContainer.transform)
+        foreach (Transform child in _gameContainer.transform)
         {
-            if (GameContainer != null)
+            if (_gameContainer != null)
                 Destroy(child.gameObject);
         }
         SetUpGridParam();
-        gridGenerator.AddItemsToGrid(MyGameItems);
+        gridGenerator.AddItemsToGrid(_myGameItems);
     }
 
     //Funtion that creates the grid based on the data of the Models
     private void SetUpGridParam()
     {
             var grid = (GridGenerator)gridGenerator;
-            grid.ColumnLenght = GVM.Config.ColumnLenght;
-            grid.RowLenght = GVM.Config.RowLenght;
-            grid.XSpace = GVM.Config.XSpace;
-            grid.YSpace = GVM.Config.YSpace;
-            grid.XStart = GVM.Config.XStart;
-            grid.YStart = GVM.Config.YStart;
-            grid.ZStart = GVM.Config.ZStart;
-            grid.Scale = GVM.Config.Scale;
-            grid.Rotation = new Vector3(GVM.Config.RotX, GVM.Config.RotY, GVM.Config.RotZ);
+            grid.ColumnLenght = _gvm.Config.ColumnLenght;
+            grid.RowLenght = _gvm.Config.RowLenght;
+            grid.XSpace = _gvm.Config.XSpace;
+            grid.YSpace = _gvm.Config.YSpace;
+            grid.XStart = _gvm.Config.XStart;
+            grid.YStart = _gvm.Config.YStart;
+            grid.ZStart = _gvm.Config.ZStart;
+            grid.Scale = _gvm.Config.Scale;
+            grid.Rotation = new Vector3(_gvm.Config.RotX, _gvm.Config.RotY, _gvm.Config.RotZ);
 
-            GameContainer.transform.localPosition = new Vector3(GVM.Config.EmptyPosX, GVM.Config.EmptyPosy, GVM.Config.EmptyPosZ);
-            GameContainer.transform.localEulerAngles = new Vector3(GVM.Config.EmptyRotX, GVM.Config.EmptyRoty, GVM.Config.EmptyRotZ);
+            _gameContainer.transform.localPosition = new Vector3(_gvm.Config.EmptyPosX, _gvm.Config.EmptyPosy, _gvm.Config.EmptyPosZ);
+            _gameContainer.transform.localEulerAngles = new Vector3(_gvm.Config.EmptyRotX, _gvm.Config.EmptyRoty, _gvm.Config.EmptyRotZ);
     }
 
     //Function that saves the parameters to the JSON file. Its called in the "Save Params." button
     public void SaveParametersToModel()
     {
-        SaveLoadGridConfig.Instance.SaveSettings(GVM.Config);
+        SaveLoadGridConfig.Instance.SaveSettings(_gvm.Config);
         SaveFeedback();
     }
 

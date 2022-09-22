@@ -12,6 +12,8 @@ public class HideShowGO : MonoBehaviour
         go.SetActive(false);
     }
 
+    //This is an overload function can be called everywhere in the code to hide GO after certain time frame
+    //Iy allows distraction of game objects from the scene
     public static IEnumerator ShowAndHide(GameObject go, float delay, GameObject destroyGameObject)
     {
         go.SetActive(true);

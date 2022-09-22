@@ -15,7 +15,7 @@ public class GridTest : MonoBehaviour
         gridGenerator = new GridGenerator(GameContainer);
 
         //Setup grid parameters by adding the array index position in the JSON FILE
-        gridGenerator.SetUpJsonGrid(1);
+        gridGenerator.SetUpJsonGrid(0);
 
         //Add your list items to new grid!
         gridGenerator.AddItemsToGrid(MyGameItems);
