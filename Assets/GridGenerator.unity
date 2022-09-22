@@ -3037,7 +3037,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA Z"
+  m_Text: "Cell Rot\xBA Z"
 --- !u!222 &575397288
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3283,7 +3283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA X"
+  m_Text: "Cell Rot\xBA X"
 --- !u!222 &628422631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8636,7 +8636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obj Rot\xBA Y"
+  m_Text: "Cell Rot\xBA Y"
 --- !u!222 &1772145342
 CanvasRenderer:
   m_ObjectHideFlags: 0

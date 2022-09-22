@@ -42,35 +42,15 @@ public class GridViewModel : MonoBehaviour
     //Update model for grid column Length 
     public void UpdateColumnLength()
     {
-        if (ColField.text.Contains("-"))
-        {
-            Debug.Log("Column Length cannot be a negative number");
-            ColField.text = Regex.Replace(ColField.text, @"[^0-9]", "");
-        }
-        else if (ColField.text.Contains("0"))
-        {
-            Debug.Log("Column Length cannot be a zero!");
-            ColField.text = "";
-        }
-        else
-            Config.ColumnLenght = Math.Abs(ConvertTextToNum<int>(ColField));
+        AddSpecificRestrictions(ColField);
+        Config.ColumnLenght = Math.Abs(ConvertTextToNum<int>(ColField));
     }
 
     //Update model for grid row length 
     public void UpdateRowLength()
     {
-        if (RowField.text.Contains("-"))
-        {
-            Debug.Log("Row Length cannot be a negative number");
-            RowField.text = Regex.Replace(RowField.text, @"[^0-9]", "");
-        }
-        else if (RowField.text.Contains("0"))
-        {
-            Debug.Log("Column Length cannot be a zero!");
-            RowField.text = "";
-        }
-        else
-            Config.RowLenght = Math.Abs(ConvertTextToNum<int>(RowField));
+        AddSpecificRestrictions(RowField);
+        Config.RowLenght = Math.Abs(ConvertTextToNum<int>(RowField));
     }
 
     //Update model for XSPACE 
@@ -222,6 +202,21 @@ public class GridViewModel : MonoBehaviour
             Debug.Log("input value is not valid: " + e.Message);
         }            
         return convert;
+    }
+
+    //Methods that will add specific restrictons to Column and Row parameters
+    public void AddSpecificRestrictions(InputField inputField)
+    {
+        if (inputField.text.Contains("-"))
+        {
+            Debug.Log("Column Length cannot be a negative number");
+            inputField.text = Regex.Replace(inputField.text, @"[^0-9]", "");
+        }
+        else if (inputField.text.StartsWith("0"))
+        {
+            Debug.Log("Column Length cannot be a zero!");
+            inputField.text = "";
+        }
     }
 
     public GridConfig Config
