@@ -59,7 +59,7 @@ public class GridManager : MonoBehaviour
         gridGenerator.AddItemsToGrid(_myGameItems);
     }
 
-    //Funtion that creates the grid based on the data of the Models
+    //Function that creates the grid based on the data of the Models
     private void SetUpGridParam()
     {
             var grid = (GridGenerator)gridGenerator;
