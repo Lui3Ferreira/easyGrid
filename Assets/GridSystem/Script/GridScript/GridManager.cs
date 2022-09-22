@@ -62,7 +62,7 @@ public class GridManager : MonoBehaviour
     //Function that creates the grid based on the data of the Models
     private void SetUpGridParam()
     {
-            var grid = (GridGenerator) ;
+            var grid = (GridGenerator)gridGenerator;
             grid.ColumnLenght = _gvm.Config.ColumnLenght;
             grid.RowLenght = _gvm.Config.RowLenght;
             grid.XSpace = _gvm.Config.XSpace;
