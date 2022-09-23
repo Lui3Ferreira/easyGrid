@@ -34,7 +34,7 @@ public class SaveLoadGridConfig : MonoBehaviour
 
     private void CheckDataFolder()
     {
-        _pathToData = Application.dataPath + "/GridSystem/Script/model/GridSaveFile.json";
+        _pathToData = Application.dataPath + "/NeuroRehabLab/easyGrid/GridSystem/Script/model/GridSaveFile.json";
 
         ReadString();
     }
@@ -63,7 +63,7 @@ public class SaveLoadGridConfig : MonoBehaviour
     {
         try
         {
-            var readJson = File.ReadAllText(Application.dataPath + "/GridSystem/Script/model/GridSaveFile.json");
+            var readJson = File.ReadAllText(Application.dataPath + "/NeuroRehabLab/easyGrid/GridSystem/Script/model/GridSaveFile.json");
             //_loadGridData = JsonUtility.FromJson<RootObject>(readJson);
             _loadGridData = JsonUtility.FromJson<RootObject>("{\"Grid\":" + readJson + "}");
         }
