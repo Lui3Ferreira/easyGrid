@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    private float _dragSpeed = 1;
+    [SerializeField]
+    private float _dragSpeed = 1, _zoomSpeed;
     private Vector3 _dragOrigin;
     [SerializeField]
     private Camera _camera;
@@ -15,6 +16,7 @@ public class CameraMovement : MonoBehaviour
         MouseCameraZoom();
     }
 
+    //Function resposponsible for vertical and horizontal movement of the camera
     private void MouseCameraMovement()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,8 +33,9 @@ public class CameraMovement : MonoBehaviour
         transform.Translate(move.x, move.y, move.z, Space.World);
     }
 
+    //Function resposponsible for zoom in/out of the camera
     private void MouseCameraZoom()
     {
-        _camera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel")*10;
+        _camera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel")* _zoomSpeed;
     }
 }
