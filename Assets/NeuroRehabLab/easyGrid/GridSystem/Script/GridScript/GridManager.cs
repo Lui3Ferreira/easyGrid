@@ -47,7 +47,7 @@ namespace GameGridManager
         //Function that will display the InfoPanel prefab
         private void InstantiateInfoPanel()
         {
-            GameObject info = Instantiate(_infoPanel, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject info = Instantiate(_infoPanel, new Vector3(-200, 0, 0), Quaternion.identity);
             info.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
         }
 
