@@ -7,10 +7,12 @@ public class MouseHoverActions : MonoBehaviour, IPointerEnterHandler, IPointerEx
 {   [SerializeField]
     private GameObject _infoPanePrefab;
     private GameObject _info;
+    [SerializeField]
+     private int xPos,yPos,zPos;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _info = Instantiate(_infoPanePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        _info = Instantiate(_infoPanePrefab, new Vector3(xPos, yPos, zPos), Quaternion.identity);
         _info.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
     }
 
