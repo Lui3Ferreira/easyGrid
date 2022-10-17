@@ -1,41 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+namespace CameraManip
 {
-    [SerializeField]
-    private float _dragSpeed = 1, _zoomSpeed;
-    private Vector3 _dragOrigin;
-    [SerializeField]
-    private Camera _camera;
-
-    void Update()
+    public class CameraMovement : MonoBehaviour
     {
-        MouseCameraMovement();
-        MouseCameraZoom();
-    }
+        [SerializeField]
+        private float _dragSpeed = 1, _zoomSpeed;
+        private Vector3 _dragOrigin;
+        [SerializeField]
+        private Camera _camera;
 
-    //Function resposponsible for vertical and horizontal movement of the camera
-    private void MouseCameraMovement()
-    {
-        if (Input.GetMouseButtonDown(0))
+        void Update()
         {
-            _dragOrigin = Input.mousePosition;
-            return;
+            MouseCameraMovement();
+            MouseCameraZoom();
         }
 
-        if (Input.GetMouseButton(0) == false) return;
+        //Function resposponsible for vertical and horizontal movement of the camera
+        private void MouseCameraMovement()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _dragOrigin = Input.mousePosition;
+                return;
+            }
 
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _dragOrigin);
-        Vector3 move = new Vector3(pos.x * _dragSpeed, pos.y * _dragSpeed, 0);
+            if (Input.GetMouseButton(0) == false) return;
 
-        transform.Translate(move.x, move.y, move.z, Space.World);
-    }
+            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - _dragOrigin);
+            Vector3 move = new Vector3(pos.x * _dragSpeed, pos.y * _dragSpeed, 0);
 
-    //Function resposponsible for zoom in/out of the camera
-    private void MouseCameraZoom()
-    {
-        _camera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel")* _zoomSpeed;
+            transform.Translate(move.x, move.y, move.z, Space.World);
+        }
+
+        //Function resposponsible for zoom in/out of the camera
+        private void MouseCameraZoom()
+        {
+            _camera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * _zoomSpeed;
+        }
     }
 }
+

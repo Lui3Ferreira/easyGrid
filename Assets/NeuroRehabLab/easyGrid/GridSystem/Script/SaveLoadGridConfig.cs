@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using UnityEngine;
+using GridConfigurations;
 
 public class SaveLoadGridConfig : MonoBehaviour
 {

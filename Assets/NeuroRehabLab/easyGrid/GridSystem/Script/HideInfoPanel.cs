@@ -1,13 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using HideShowGameObject;
 
-public class HideInfoPanel : MonoBehaviour
+namespace InfoPanelManip
 {
-    private float _delay = 3f; 
-    void Start()
+    public class HideInfoPanel : MonoBehaviour
     {
-        //Will hide the info panel after 3 seconds
-        StartCoroutine(HideShowGO.ShowAndHide(gameObject, _delay, gameObject));
+        private float _delay = 3f;
+        void Start()
+        {
+            //Will hide the info panel after 3 seconds
+            StartCoroutine(HideShowGO.ShowAndHide(gameObject, _delay, gameObject));
+        }
     }
 }
+
+
