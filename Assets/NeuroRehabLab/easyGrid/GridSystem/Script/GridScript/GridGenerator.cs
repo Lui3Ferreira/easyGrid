@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using GeneratorInterface;
+using SaveGridConfig;
 
 namespace GenerateGrids
 {
