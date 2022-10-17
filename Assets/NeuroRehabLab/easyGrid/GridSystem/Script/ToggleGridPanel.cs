@@ -1,43 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleGridPanel : MonoBehaviour
+
+namespace TogglePanelManip
 {
-    [SerializeField]
-    private GameObject Canvas;
-
-    private bool _isOn;
-
-    [SerializeField]
-    private Sprite _imageShow, _imageHide;
-
-    [SerializeField]
-    private Button _hideShowBtn;
-
-    void Start()
+    public class ToggleGridPanel : MonoBehaviour
     {
-        _isOn = true;
-    }
+        [SerializeField]
+        private GameObject Canvas;
 
-    public void ButtonToggle()
-    {
-        if (_isOn)
+        private bool _isOn;
+
+        [SerializeField]
+        private Sprite _imageShow, _imageHide;
+
+        [SerializeField]
+        private Button _hideShowBtn;
+
+        void Start()
         {
-            _isOn = !_isOn;
-            ChangeImageFunction(_isOn, _imageShow);
+            _isOn = true;
         }
-        else
-        {
-            _isOn = !_isOn;
-            ChangeImageFunction(_isOn, _imageHide);
-        }
-    }
 
-    private void ChangeImageFunction(bool on, Sprite sprite)
-    {
-        _hideShowBtn.GetComponent<Image>().sprite = sprite;
-        Canvas.SetActive(on);
+        public void ButtonToggle()
+        {
+            if (_isOn)
+            {
+                _isOn = !_isOn;
+                ChangeImageFunction(_isOn, _imageShow);
+            }
+            else
+            {
+                _isOn = !_isOn;
+                ChangeImageFunction(_isOn, _imageHide);
+            }
+        }
+
+        private void ChangeImageFunction(bool on, Sprite sprite)
+        {
+            _hideShowBtn.GetComponent<Image>().sprite = sprite;
+            Canvas.SetActive(on);
+        }
     }
 }

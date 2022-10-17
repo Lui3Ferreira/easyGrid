@@ -1,8 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IGenerator
+namespace GeneratorInterface
 {
-    void AddItemsToGrid(List<GameObject> gOs);
-    void SetUpJsonGrid(int gridJsonIndex);
+    interface IGenerator
+    {
+        void AddItemsToGrid(List<GameObject> gOs);
+        void SetUpJsonGrid(int gridJsonIndex);
+    }
 }
+
+

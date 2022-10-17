@@ -1,10 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using GridConfigurations;
 
-[Serializable]
-public class RootObject
+namespace GridConfigurations
 {
-    public GridConfig[] Grid;
+    [Serializable]
+    public class RootObject
+    {
+        public GridConfig[] Grid;
+    }
 }
+

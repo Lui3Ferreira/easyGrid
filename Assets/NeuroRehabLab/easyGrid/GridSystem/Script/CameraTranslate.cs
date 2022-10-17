@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTranslate : MonoBehaviour
+namespace CameraManip
 {
-    [SerializeField]
-    private Camera _camera;
-
-    //Will assign default values to the camera
-    public void MoveCameraToCenter()
+    public class CameraTranslate : MonoBehaviour
     {
-        _camera.transform.position = new Vector3(0, 0, -10); ;
-        _camera.fieldOfView = 60f;
+        [SerializeField]
+        private Camera _camera;
+
+        //Will assign default values to the camera
+        public void MoveCameraToCenter()
+        {
+            _camera.transform.position = new Vector3(0, 0, -10); ;
+            _camera.fieldOfView = 60f;
+        }
     }
 }
+
