@@ -10,7 +10,7 @@ namespace CameraManip
         [SerializeField]
         private Camera _camera;
 
-        void Update()
+        public void Update()
         {
             MouseCameraMovement();
             MouseCameraZoom();

@@ -90,14 +90,9 @@ namespace ModelToGrid
         //Update model for scale 
         public void UpdateScale()
         {
-            if (ScaleField.text.Contains(","))
-            {
-                Debug.Log("Entrou aqui");
-                var newText = ScaleField.text.Replace(',', '.');
-                ScaleField.text = newText;
-            }
-            else
-                Config.Scale = ConvertTextToNum<float>(ScaleField);
+            AddSpecificRestrictions(ScaleField);
+        
+            Config.Scale = Math.Abs(ConvertTextToNum<float>(ScaleField));
         }
 
         //Update model for cell rotation in X
@@ -213,12 +208,12 @@ namespace ModelToGrid
         {
             if (inputField.text.Contains("-"))
             {
-                Debug.Log("Column Length cannot be a negative number");
+                Debug.Log("Field cannot have negative values");
                 inputField.text = Regex.Replace(inputField.text, @"[^0-9]", "");
             }
             else if (inputField.text.StartsWith("0"))
             {
-                Debug.Log("Column Length cannot be a zero!");
+                Debug.Log("Field cannot be a zero!");
                 inputField.text = "";
             }
         }
